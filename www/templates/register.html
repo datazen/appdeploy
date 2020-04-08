@@ -1,0 +1,27 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Register Account</h1>
+    </div>
+    <form name="RegForm" ng-submit="registerMember()">
+        <p>Registration is a two step process. First, provide the information below to locate your record in our system.</p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div class="row">
+            <input type="text" name="number" ng-model="member.number" placeholder="Member ID" class="full-width" required>
+        </div>
+        <div class="row">
+            <input type="text" name="first_name" ng-model="member.first_name" placeholder="First name" class="full-width" required>
+        </div>
+        <div class="row">
+            <input type="text" name="last_name" ng-model="member.last_name" placeholder="Last Name" class="full-width" required>
+        </div>
+        <div class="row">
+            <input type="tel" pattern="[0-9]*" name="zip" ng-model="member.zip" placeholder="Primary Zip" class="full-width" required>
+        </div>
+        <div class="row">
+            <input type="text" name="employee_id" ng-model="member.employee_id" placeholder="Full Employee ID # or Last 4 digits of SSN" class="full-width" required>
+        </div>
+        <input type="submit" class="submit" value="Next"
+               ng-disabled="!(RegForm.number.$valid && RegForm.first_name.$valid && RegForm.last_name.$valid && RegForm.zip.$valid && RegForm.employee_id.$valid) "/>
+    </form>
+</div>

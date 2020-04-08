@@ -1,0 +1,6 @@
+.git/*
+.idea/*
+platforms/*
+hooks/*
+node_modules/*
+plugins/*

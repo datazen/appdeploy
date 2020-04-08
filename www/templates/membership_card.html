@@ -1,0 +1,38 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Membership Card</h1>
+    </div>
+
+    <section class="membership_card">
+        <table class="membership_card">
+            <tr>
+                <th colspan="2">
+                    <img src="img/logo.png"/>
+                    <span>Membership Card</span>
+                </th>
+            </tr>
+            <tr>
+                <th>Member Name:</th>
+                <td>{{member.first_name}} {{member.last_name}}</td>
+            </tr>
+            <tr>
+                <th>Web/Member ID:</th>
+                <td>{{member.member_number}}</td>
+            </tr>
+            <tr>
+                <th>Effective Date:</th>
+                <td>{{member.effective_date}}</td>
+            </tr>
+            <tr>
+                <th>Customer Service:</th>
+                <td><a href="tel:{{member.support_phone}}">{{phoneFormat(getSupportPhoneNumber())}}</a></td>
+            </tr>
+            <tr>
+                <th>After Hours:</th>
+                <td><a href="tel:{{member.support_phone}}">{{phoneFormat(getSupportPhoneNumber())}}</a></td>
+            </tr>
+        </table>
+        <p class="small-hint center">Not sponsored or approved by the United States Government or any department or agency of thereof.</p>
+    </section>
+</div>

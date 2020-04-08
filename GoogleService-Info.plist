@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>18495834307-qpb573tu1ndq9p9e1lsf84vm26re7dd1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.18495834307-qpb573tu1ndq9p9e1lsf84vm26re7dd1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxdKu-U0WDOD260BhP_ftSOPJ_LO4qrhY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>18495834307</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.uslegalservices.memberapp</string>
+	<key>PROJECT_ID</key>
+	<string>us-legal-services</string>
+	<key>STORAGE_BUCKET</key>
+	<string>us-legal-services.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:18495834307:ios:d6058577bed5ba20</string>
+	<key>DATABASE_URL</key>
+	<string>https://us-legal-services.firebaseio.com</string>
+</dict>
+</plist>

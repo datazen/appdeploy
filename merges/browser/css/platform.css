@@ -1,0 +1,193 @@
+
+.button {
+    padding: 14px 0;
+}
+
+
+#dialog {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+
+
+/* Modal Content */
+#dialog .dbody {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#dialog .dtitle {
+    background-color: #00386A;
+    padding: 10px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+#dialog .dmsg {
+    padding: 10px;
+}
+
+#dialog .dbtn {
+    padding: 15px 10px;
+    display: inline-block;
+    background-color: #00386A;
+    color: #FFF;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: 5px 15px;
+    min-width: 70px;
+    min-height: 44px;
+    text-align: center;
+}
+
+/* The Close Button */
+#dialog #close {
+    color: #FFF;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top:-7px
+
+}
+
+#dialog #close:hover,
+#dialog #close:focus {
+    color: #CCC;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (min-height: 850px) {
+    #dialog {
+        padding-top: 200px;
+    }
+}
+
+@media only screen and (min-height: 1050px) {
+    #dialog {
+        padding-top: 350px;
+    }
+}
+
+/******************************
+
+              NAV
+
+*******************************/
+
+@media only screen and (min-width: 1024px) {
+
+    #dialog .dbody {
+        width: 40%;
+    }
+
+    nav {
+        left: 0px;
+    }
+
+    #menuTrigger {
+        display: none;
+    }
+
+    header .header-container,
+    #container {
+        max-width: 660px;
+        margin: 0 0 0 375px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    #dialog .dbody {
+        width: 40%;
+    }
+
+    nav {
+        left: 0px;
+    }
+
+    #menuTrigger {
+        display: none;
+    }
+
+    header .header-container,
+    #container {
+        max-width: 960px;
+        margin: 0 0 0 375px;
+    }
+}
+
+@media only screen and (min-width: 1675px) {
+
+    header .header-container,
+    #container {
+        margin: 0 auto;
+    }
+
+    #dialog .dbody {
+        width: 35%;
+    }
+
+}
+
+
+/******************************
+
+         FILE UPLOAD
+
+*******************************/
+
+
+.percent {
+    position: absolute; width: 300px; height: 14px; z-index: 1; text-align: center; font-size: 0.8em; color: white;
+}
+.progress-bar {
+    width: 300px; height: 14px;
+    border: 1px solid #CCC;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6666cc), to(#4b4b95));
+    border-image: initial;
+}
+.uploaded {
+    padding: 0;
+    height: 14px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#66cc00), to(#4b9500));
+    border-image: initial;
+}
+.dropbox {
+    width: 99%;
+    height: 150px;
+    border: 2px dashed #DDD;
+    background-color: #FEFFEC;
+    text-align: center;
+    color: #BBB;
+    font-size: 36px;
+    box-sizing: border-box;
+}
+.dropbox span {
+    margin-top: 45px;
+    display: block;
+}
+.dropbox.not-available {
+    background-color: #F88;
+}
+.dropbox.over {
+    background-color: #CCC;
+}
+
+section.membership_card{
+    border: 1px #cccccc dashed;
+    padding: 5px;
+}

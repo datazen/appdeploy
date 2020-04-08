@@ -1,0 +1,58 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Register Account</h1>
+    </div>
+    <form name="PassSet">
+        <p>We have successfully located your account. Now you can setup a username, password and security question.</p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div class="row">
+            <input type="email" name="username" ng-model="member.username" placeholder="New Username" class="full-width" required>
+            <p class="small-hint error" ng-show="PassSet.username.$invalid">Must be a valid email address</p>
+            <p class="small-hint success" ng-show="PassSet.username.$valid">Must be a valid email address;</p>
+        </div>
+        <div class="row">
+            <input type="password" ng-maxlength="20" name="pass" ng-model="member.password" placeholder="Password" class="full-width" required>
+            <ul>
+                <li ng-show="member.password == null || member.password.length < 8 || member.password.length > 20"
+                    class="small-hint error">Must be between 8 and 20 characters</li>
+                <li ng-show="member.password.length >= 8" class="small-hint success">Must be between 8 and 20 characters</li>
+                <li ng-show="!isPasswordUpper()" class="small-hint error">Must have at least one upper case letter</li>
+                <li ng-show="isPasswordUpper()" class="small-hint success">Must have at least one upper case letter</li>
+                <li ng-show="!isPasswordDigit()" class="small-hint error">Must have at least one digit</li>
+                <li ng-show="isPasswordDigit()" class="small-hint success">Must have at least one digit</li>
+                <li ng-show="!isPasswordSpecial()" class="small-hint error">Must have at least one special character ($, #, %, &, @, !, /)</li>
+                <li ng-show="isPasswordSpecial()" class="small-hint success">Must have at least one special character ($, #, %, &, @. !, /)</li>
+            </ul>
+        </div>
+        <div class="row">
+            <input type="password" ng-model="member.password2" name="pass2" placeholder="Repeat Password" class="full-width" required>
+            <p ng-show="member.password2 !== member.password" class="small-hint error">Passwords do not match.</p>
+            <p ng-show="member.password2 === member.password" class="small-hint success">Passwords match.</p>
+        </div>
+        <div class="row">
+            <select ng-model="member.security_question" class="full-width" name="SecQ" required>
+                <option value="" disabled selected>Select a Security Question</option>
+                <option>In what town or city were you born?</option>
+                <option>What was your high school mascot?</option>
+                <option>What is your mother’s maiden name?</option>
+                <option>What is your father’s middle name?</option>
+                <option>In what city or town did you meet your spouse/partner?</option>
+            </select>
+        </div>
+        <div class="row">
+            <input type="text" ng-model="member.security_answer" name="SecA" placeholder="Security Question Answer" class="full-width" required>
+        </div>
+
+        <input type="submit" class="submit" ng-click="initialSetup()" value="Register"
+               ng-disabled="!(PassSet.username.$valid
+                                && PassSet.pass.$valid
+                                && member.password === member.password2
+                                && member.password.length >= 8
+                                && member.password.length <= 20
+                                && isPasswordUpper() && isPasswordDigit() && isPasswordSpecial()
+                                && PassSet.SecQ.$valid
+                                && PassSet.SecA.$valid
+                                && !inProgress)"/>
+    </form>
+</div>

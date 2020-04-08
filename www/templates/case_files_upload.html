@@ -1,0 +1,21 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Upload Files</h1>
+    </div>
+
+    <form name="CaseFiles" ng-submit="uploadFiles()">
+
+        <p>Add {{uploadType()}} files to your case. Once you upload the files, you will not be able to change them.</p>
+        <p><strong>If you have additional documentation after this initial submission, please contact Customer Service.
+        </strong></p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div id="imgs"></div>
+        <div>
+            <div class="button camera-button" ng-click="capturePhoto()"></div>
+            <div class="button gallery-button" ng-click="capturePhotoFromGallery()"></div>
+        </div>
+
+        <input type="submit" class="submit" value="Upload Images"/>
+    </form>
+</div>

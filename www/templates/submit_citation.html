@@ -1,0 +1,60 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Submit a Citation or Roadside Inspection</h1>
+    </div>
+    <form name="citationCreate" ng-submit="submitCitation()">
+        <p>Enter your citation or roadside inspection information.</p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+
+        <fieldset data-ng-repeat="number in citation_numbers" class="citation_number">
+            <div ng-if="$first" id="first_citation">
+                <input type="text" ng-model="number.num" name="citation_number_first" placeholder="Citation Number" required>
+                <p class="small-hint error" ng-show="citationCreate.citation_number_first.$invalid">
+                    Citation number is required
+                </p>
+                <p class="small-hint success" ng-show="citationCreate.citation_number_first.$valid">
+                    Citation number is required
+                </p>
+            </div>
+            <span ng-if="$first == false">
+                    <input type="text" ng-model="number.num" name="citation_number" placeholder="Citation Number">
+            </span>
+            <input type="button" class="remove" ng-show="$last" ng-disabled="citation_numbers.length == 1" ng-click="removeCitationNumber()" value="-">
+            <input type="button" class="add" ng-show="$last" ng-click="addCitationNumber()" value="+">
+        </fieldset>
+
+        <div class="row" id="roadside_inspection">
+            <input type="text" ng-model="ver_number" class="full-width" name="ver_number" placeholder="Roadside Inspection Number">
+            <p class="small-hint success">
+                Roadside Inspection # is optional
+            </p>
+        </div>
+
+        <div class="row" id="cit-date">
+            <input type="date" name="issue_date" ng-model="citation.issue_date" placeholder="Issue Date" class="full-width">
+            <p class="small-hint error" ng-show="citation.issue_date == null || citation.issue_date === ''">Issue date is required</p>
+            <p class="small-hint success" ng-show="citation.issue_date != null &&  citation.issue_date !== ''">Issue date is required</p>
+        </div>
+
+        <div class="row">
+            <input type="date" name="court_date" ng-model="citation.court_date" placeholder="Court Date" class="full-width">
+            <p class="small-hint">Court Date is optional</p>
+        </div>
+
+        <div class="row">
+            <input type="time" name="court_time" ng-model="citation.court_time" placeholder="Court Time" class="full-width">
+            <p class="small-hint">Court Time is optional</p>
+        </div>
+
+        <div class="row">
+            <input type="tel" id="courtphone" name="court_phone" ng-model="citation.court_phone" placeholder="Court Phone" class="full-width" ng-change="formatCourtPhone();">
+            <p class="small-hint">Court phone is optional</p>
+        </div>
+
+        <input type="submit" class="submit" value="Submit"
+               ng-disabled="!(citationCreate.citation_number_first.$valid
+                                && citation.issue_date != null
+                                && !inProgress)"/>
+    </form>
+</div>

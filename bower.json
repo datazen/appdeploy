@@ -1,0 +1,20 @@
+{
+  "name": "U.S. Legal Services",
+  "authors": [
+    "acharapko <alekseycharapko@gmail.com>"
+  ],
+  "description": "U.S. Legal Services",
+  "main": "www/index.html",
+  "license": "proprietary",
+  "homepage": "uslegalservices.net",
+  "private": true,
+  "dependencies": {
+    "angular": "1.7.x",
+    "angular-animate": "1.7.x",
+    "angular-mocks": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-route": "1.7.x",
+    "jquery": "3.4.x",
+    "jquery-timepicker-wvega": "^1.3.5"
+  }
+}

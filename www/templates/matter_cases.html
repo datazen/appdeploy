@@ -1,0 +1,35 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Matter Cases</h1>
+    </div>
+
+    <a class="button" id="openBtn" href="javascript:;" ng-click="toggleOpenCases()">{{open_cases_buttion}}</a>
+    <section ng-show="show_open_cases" id="open_cases">
+        <h3 class="align-center">Open Matter Cases</h3>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <ul class="cases_list">
+            <li class="matter-case-tile" ng-repeat="case in matterCases | filter:filtOpen | orderBy:'-matter_number'" ng-click="showMatterCase(case.matter_number);">
+                <div>
+                    Matter #{{case.matter_number}}
+                    <p class="small-hint"> {{case.what}}</p>
+                </div>
+                <img src="img/forward.png" />
+            </li>
+        </ul>
+    </section>
+    <a class="button" id="closedBtn" href="javascript:;" ng-click="toggleClosedCases()">{{closed_cases_buttion}}</a>
+    <section ng-show="show_closed_cases" id="closed_cases">
+        <h3 class="align-center">Closed Matter Cases</h3>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <ul class="cases_list">
+            <li class="matter-case-tile" ng-repeat="case in matterCases | filter:{status:'Closed'} | orderBy:'-matter_number'" ng-click="showMatterCase(case.matter_number);">
+                <div>
+                    Matter #{{case.matter_number}}
+                    <p class="small-hint"> {{case.what}}</p>
+                </div>
+                <img src="img/forward.png" />
+            </li>
+        </ul>
+    </section>
+</div>

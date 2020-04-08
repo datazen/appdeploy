@@ -1,0 +1,32 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Upload Files</h1>
+    </div>
+
+
+
+        <p>Add {{uploadType()}} pdf files to your case. Once you upload the files, you will not be able to change them.</p>
+        <p><strong>If you have additional documentation after this initial submission, please contact Customer Service at (800) 356-LAWS (5297).
+        </strong></p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+
+        <h3>Select a PDF file to upload</h3>
+        <div class="row">
+            <input type="file" ng-model-instant id="fileToUpload" onchange="angular.element(this).scope().setFiles(this)" />
+        </div>
+        <h3>Or drop file in the box</h3>
+        <div id="dropbox" class="dropbox" ng-class="dropClass"><span>{{dropText}}</span></div>
+        <div ng-show="files.length">
+            <div ng-repeat="file in files.slice(0)">
+                <span>{{file.webkitRelativePath || file.name}}</span>
+                (<span ng-switch="file.size > 1024*1024">
+                <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
+                <span ng-switch-default>{{file.size / 1024 | number:2}} kB</span>
+            </span>)
+            </div>
+        </div>
+
+        <input type="button" class="submit" ng-click="uploadFiles()" value="Upload Documents"/>
+
+</div>

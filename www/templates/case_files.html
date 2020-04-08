@@ -1,0 +1,20 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <!--<a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>-->
+        <h1 class="title">Upload Supporting Files</h1>
+    </div>
+
+    <section>
+        <p>Here you can upload supporting files for your case.
+            Please note that you will not be able to return to this screen once you navigate away. </p>
+        <p><strong>If you have additional documentation after this initial submission, please contact Customer Service.
+        </strong></p>
+        <a class="button" href="javascript:void(0);" ng-show="canUpload('cit')" ng-click="uploadCit()">Upload Citation Files</a>
+        <a class="button" href="javascript:void(0);" ng-show="canUpload('ver')" ng-click="uploadVer()">Upload Roadside Inspection Files</a>
+        <a class="button" href="javascript:void(0);" ng-show="canUpload('other')" ng-click="uploadOther()">Upload Other/Misc Files</a>
+        <hr>
+        <a class="button" href="javascript:void(0);" ng-click="uploadDone()">Done Uploading Files</a>
+    </section>
+
+
+</div>

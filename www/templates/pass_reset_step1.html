@@ -1,0 +1,21 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Password Reset</h1>
+    </div>
+
+    <p class="center">Enter your username email to start password recovery</p>
+    <form name="PassReset" ng-submit="passwordResetStep1()">
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div class="row">
+            <input type="email" name="username" ng-model="member.username" placeholder="Username" class="full-width" required>
+            <p class="small-hint error" ng-show="PassReset.username.$invalid">Must be a valid email address</p>
+            <p class="small-hint success" ng-show="PassReset.username.$valid">Must be a valid email address;</p>
+        </div>
+        <div class="row">
+            <input type="submit" class="submit" value="Next"
+                   ng-disabled="!(PassReset.username.$valid
+                                && !inProgress)"/>
+        </div>
+    </form>
+</div>

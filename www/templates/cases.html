@@ -1,0 +1,26 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Citation & Roadside Inspection cases</h1>
+    </div>
+    <a class="button" id="openBtn" href="javascript:;" ng-click="toggleOpenCases()">{{open_cases_buttion}}</a>
+    <section ng-show="show_open_cases" id="open_cases">
+        <h3 class="align-center">Open Cases</h3>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <ul class="cases_list">
+            <li ng-repeat="case in cases | filter:filtOpen | orderBy:'-cdl_number'" ng-click="showCase(case.cdl_number);">
+                {{case.case_type}} Case #{{case.cdl_number}} <img src="img/forward.png" />
+            </li>
+        </ul>
+    </section>
+    <a class="button" id="closedBtn" href="javascript:;" ng-click="toggleClosedCases()">{{closed_cases_buttion}}</a>
+    <section ng-show="show_closed_cases" id="closed_cases">
+        <h3 class="align-center">Closed Cases</h3>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <ul class="cases_list">
+            <li ng-repeat="case in cases | filter:{status:'Closed'} | orderBy:'-cdl_number'" ng-click="showCase(case.cdl_number);">
+                {{case.case_type}} Case #{{case.cdl_number}} <img src="img/forward.png" />
+            </li>
+        </ul>
+    </section>
+</div>

@@ -1,0 +1,41 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Consultation Request</h1>
+    </div>
+    <form name="matterCaseCreate" ng-submit="createMatterCase()">
+        <p>Please provide the following information to request a consultation. </p>
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+
+        <div class="row">
+            <input type="text" name="who" ng-model="new_case.who" placeholder="Who needs assistance?" class="full-width" required maxlength="50">
+            <p class="small-hint error" ng-show="matterCaseCreate.who.$invalid">This field is required</p>
+            <p class="small-hint success" ng-show="matterCaseCreate.who.$valid">This field is required</p>
+        </div>
+
+        <div class="row">
+            <input type="text" name="what" ng-model="new_case.what" placeholder="What is the legal issue?" class="full-width" required maxlength="50">
+            <p class="small-hint error" ng-show="matterCaseCreate.what.$invalid">This field is required</p>
+            <p class="small-hint success" ng-show="matterCaseCreate.what.$valid">This field is required</p>
+        </div>
+
+        <div class="row">
+            <input type="text" name="when" ng-model="new_case.when" placeholder="When is assistance needed by?" class="full-width" required maxlength="50">
+            <p class="small-hint error" ng-show="matterCaseCreate.when.$invalid">If a court date exists, please enter it here. This field is required</p>
+            <p class="small-hint success" ng-show="matterCaseCreate.when.$valid">If a court date exists, please enter it here. This field is required</p>
+        </div>
+
+        <div class="row">
+            <input type="text" name="where" ng-model="new_case.where" placeholder="Where is the legal issue occurring?" class="full-width" required maxlength="50">
+            <p class="small-hint error" ng-show="matterCaseCreate.where.$invalid">This field is required</p>
+            <p class="small-hint success" ng-show="matterCaseCreate.where.$valid">This field is required</p>
+        </div>
+
+        <input type="submit" class="submit" value="Request a Consultation"
+               ng-disabled="!(matterCaseCreate.where.$valid
+                                && matterCaseCreate.when.$valid
+                                && matterCaseCreate.what.$valid
+                                && matterCaseCreate.who.$valid
+                                && !inProgress)"/>
+    </form>
+</div>

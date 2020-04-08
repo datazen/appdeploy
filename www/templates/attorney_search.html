@@ -1,0 +1,140 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Attorney Search</h1>
+    </div>
+    <form id="search" name="attorneySearch" ng-submit="search()">
+
+        <p>Please contact our Customer Service Department prior to contacting the Network Attorney
+            to obtain your attorney assignment and verify your plan coverage.</p>
+
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div class="row">
+            <h3 class="center">What kind of legal service do you need?</h3>
+            <select name="coverage" ng-model="search.coverage" class="full-width" required>
+                <option disabled value="">Please select one</option>
+                <option ng-repeat="cvrg in coverageItems" value="{{cvrg}}">{{cvrg}}</option>
+            </select>
+        </div>
+        <section>
+            <div class="row">
+                <p>Please provide one of the two:</p>
+                <ul>
+                    <li>State and county</li>
+                    <li>ZIP code and distance</li>
+                </ul>
+            </div>
+        </section>
+        <a class="button" href="javascript:;" ng-click="showCountySearch()">Search By State & County</a>
+        <section ng-show="countySearch" class="attorney-search-options">
+            <h4>State & County Search</h4>
+            <div class="row">
+                <select name="state" ng-model="search.state" class="full-width" ng-change="selectState(search.state)" >
+                    <option disabled value="">Select a state</option>
+                    <option ng-repeat="state in stateList" value="{{state.shortName}}">{{state.name}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <select ng-disabled="search.state == null" name="county" ng-model="search.county" class="full-width" >
+                    <option disabled value="">Select a county</option>
+                    <option ng-repeat="county in stateCounties | orderBy:'countyname'" value="{{county.countyname}}">{{county.countyname}}</option>
+                </select>
+                <p class="small-hint" ng-show="search.state == null">Please select a state first</p>
+                <p class="small-hint" ng-show="search.state != null">County is required</p>
+            </div>
+        </section>
+        <a class="button" href="javascript:;" ng-click="showZipSearch()">Search By ZIP Code</a>
+        <section ng-show="zipSearch" class="attorney-search-options">
+            <h4>ZIP Code Search</h4>
+            <div class="row">
+                <input type="tel" pattern="[0-9]*" ng-maxlength="5" ng-minlength="5" placeholder="ZIP" name="zip" ng-model="search.zip" class="full-width">
+            </div>
+            <div class="row">
+                <select name="radius" ng-model="search.radius" class="full-width" name="radius">
+                    <option disabled value="">Please select search radius</option>
+                    <option value="5">5 Miles</option>
+                    <option value="10">10 Miles</option>
+                    <option value="15">15 Miles</option>
+                    <option value="30">30 Miles</option>
+                    <option value="50">50 Miles</option>
+                </select>
+            </div>
+        </section>
+
+        <section>
+            <div class="row">
+                <input type="submit" class="submit" value="Search"
+                       ng-disabled="!(attorneySearch.coverage.$valid
+                                && ((search.state != null && search.county != null) || (search.zip != null && search.radius != null))
+                                && !inProgress)"/>
+            </div>
+        </section>
+        <section id="noresults" ng-show="searchedAtLeastOnce && !(attorneys.length > 0)">
+            <p>We're sorry. We could not locate an attorney based on your search. Please contact our Customer Service
+                Department and speak with a Customer Service Representative.</p>
+        </section>
+
+        <section class="multi-table-section" ng-show="attorneys.length > 0">
+            <h1>Search Results</h1>
+            <ul class="attorney-list">
+                <li ng-repeat="attorney in attorneys">
+
+                    <table class="full-table two-col small-screen">
+                        <tr>
+                            <th>Name</th>
+                            <td>{{attorney.attornet_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{attorney.address1}} <br> {{attorney.city}}, {{attorney.state}} {{attorney.zip}}</td>
+                        </tr>
+                        <tr>
+                            <th>Coverage</th>
+                            <td>
+                                <ul class="coverage-list">
+                                    <li ng-repeat="cvrg in attorney.coverage">
+                                        {{cvrg.coverage}}
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a ng-show="!isBrowser() && !isDemo()" class="button button-small phone-number" href="tel:{{getSupportPhoneNumber()}}">Contact Attorney</a>
+                                <p ng-show="isBrowser()">Contact U.S. Legal Support at {{phoneFormat(getSupportPhoneNumber())}}</p>
+                                <p class="small-hint" ng-show="isDemo()">Contact Attorney is not available in demo mode.</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="full-table three-col big-screen">
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Coverage</th>
+                        </tr>
+                        <tr>
+                            <td>{{attorney.attornet_name}}</td>
+                            <td>{{attorney.address1}} <br> {{attorney.city}}, {{attorney.state}} {{attorney.zip}}</td>
+                            <td>
+                                <ul class="coverage-list">
+                                    <li ng-repeat="cvrg in attorney.coverage">
+                                        {{cvrg.coverage}}
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <a ng-show="!isBrowser() && !isDemo()" class="button button-small phone-number" href="tel:{{getSupportPhoneNumber()}}">Contact Attorney</a>
+                                <p ng-show="isBrowser()">Contact U.S. Legal Support at {{phoneFormat(getSupportPhoneNumber())}}</p>
+                                <p class="small-hint" ng-show="isDemo()">Contact Attorney is not available in demo mode.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </section>
+        <a href="javascript:;" ng-click="scrollTo('search');" class="button-small button">Back To Search</a>
+    </form>
+</div>

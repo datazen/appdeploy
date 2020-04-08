@@ -1,0 +1,27 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Plan Documents</h1>
+    </div>
+
+    <section class="multi-table-section">
+        <h3>{{planDocs.plan.planDesc}}</h3>
+        <p>Download plan coverage information</p>
+        <a ng-show="planDocs.planCoverage != null && planDocs.planCoverage.length > 0"
+           class="button-small" href="javascript:;" ng-click="openPDF(planDocs.planCoverage)">Click to Download</a>
+        <p ng-show="planDocs.planCoverage == null || planDocs.planCoverage.length == 0">There are no coverage documents in this plan.</p>
+        <h3>Endorsements</h3>
+        <p ng-show="planDocs.endorsements == null || planDocs.endorsements.length == 0">There are no endorsements in this plan.</p>
+        <ul>
+            <li ng-repeat="endorsement in planDocs.endorsements">
+                <table class="full-table two-col">
+                    <tr>
+                        <th>{{endorsement.Type}}</th>
+                        <td><a class="button-small" href="javascript:;" ng-click="openPDF(endorsement.url)">Click to Download</a></td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </section>
+
+</div>

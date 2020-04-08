@@ -1,0 +1,122 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">{{currentCase.case_type}} case # {{currentCase.cdl_number}}</h1>
+    </div>
+
+    <section>
+        <h3>Case Information</h3>
+        <!--<a href="#!case/{{currentCase.cdl_number}}/case_files" >Upload Files</a>-->
+        <table class="full-table two-col">
+            <tr>
+                <th>Case #</th>
+                <td>{{currentCase.cdl_number}}</td>
+            </tr>
+            <tr>
+                <th>Case Type</th>
+                <td>{{currentCase.case_type}}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{currentCase.status}}</td>
+            </tr>
+            <tr>
+                <th>Date Created</th>
+                <td>{{currentCase.datecreated}}</td>
+            </tr>
+            <tr>
+                <th>Disposition Date</th>
+                <td>{{currentCase.disposition_date}}</td>
+            </tr>
+            <tr>
+                <th>Ticket Type</th>
+                <td>{{currentCase.ticket_type}}</td>
+            </tr>
+            <tr>
+                <th>Roadside Inspection Received?</th>
+                <td>{{currentCase.ver_details.ver_issues}}</td>
+            </tr>
+            <tr>
+                <th>Roadside Inspection Report Number</th>
+                <td>{{currentCase.ver_details.ver_report_number}}</td>
+            </tr>
+            <tr>
+                <th>Court County</th>
+                <td>{{currentCase.court_county}}</td>
+            </tr>
+            <tr>
+                <th>Court Date/Time</th>
+                <td>{{currentCase.court_datetime}}</td>
+            </tr>
+            <tr>
+                <th>Court Phone</th>
+                <td>{{currentCase.court_phone}}</td>
+            </tr>
+            <tr>
+                <th>Attorney Name</th>
+                <td>{{currentCase.attorney_name}}</td>
+            </tr>
+            <tr>
+                <th>Attorney Phone</th>
+                <td>{{currentCase.attorney_phone}}</td>
+            </tr>
+        </table>
+    </section>
+    <section class="multi-table-section">
+        <h3>Citations</h3>
+
+        <table class="full-table big-screen">
+            <tr>
+                <th>Citation #</th>
+                <th>Violation</th>
+                <th>State</th>
+                <th>Initial Fine</th>
+                <th>Disposition</th>
+                <th>Final Fine</th>
+            </tr>
+            <tr ng-repeat="citation in currentCase.citations">
+                <td>{{citation.citation_number}}</td>
+                <td>{{citation.violation}}</td>
+                <td>{{citation.issued_state}}</td>
+                <td ng-show="citation.init_fine_amount !== ''">${{citation.init_fine_amount}}</td>
+                <td ng-show="citation.init_fine_amount === ''">N/A</td>
+                <td>{{citation.disposition}}</td>
+                <td>{{citation.final_fine_amount}}</td>
+            </tr>
+        </table>
+
+        <ul class="small-screen">
+            <li ng-repeat="citation in currentCase.citations">
+                <table class="full-table two-col">
+                    <tr>
+                        <th>Citation Number</th>
+                        <td>{{citation.citation_number}}</td>
+                    </tr>
+                    <tr>
+                        <th>Violation</th>
+                        <td>{{citation.violation}}</td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>{{citation.issued_state}}</td>
+                    </tr>
+                    <tr>
+                        <th>Initial Fine Amount</th>
+                        <td ng-show="citation.init_fine_amount !== ''">${{citation.init_fine_amount}}</td>
+                        <td ng-show="citation.init_fine_amount === ''">N/A</td>
+                    </tr>
+                    <tr>
+                        <th>Disposition</th>
+                        <td>{{citation.disposition}}</td>
+                    </tr>
+                    <tr>
+                        <th>Final Fine Amount</th>
+                        <td>{{citation.final_fine_amount}}</td>
+                    </tr>
+
+                </table>
+            </li>
+        </ul>
+    </section>
+
+</div>

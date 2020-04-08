@@ -1,0 +1,64 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Add Spouse/Dependent</h1>
+    </div>
+
+    <form name="addDep" ng-submit="addDependent()">
+
+        <section class="disclaimer">
+            <h4>Eligibility Requirements for Spouse/Dependents</h4>
+            <p>For a Spouse/Dependent to be added, their last name must match yours.</p>
+            <p>If the last name does not match, or the relationship is a domestic partnership,
+                common law marriage, etc., approved documentation is needed to confirm eligibility.
+                Examples of such documentation include: Marriage license, Domestic Partner
+                Registration/Certificate (varies by state, but needs to be for a one year period),
+                proof of insurance (from employer), mortgage/lease/utility bill (to establish
+                longevity of common law relationship) (state must be a common-law state),
+                and birth certificates. In order for claims to be processed, documentation
+                to verify the relationship may be required.  </p>
+            <p>Approved documentation is needed to confirm eligibility of a dependent child or children.
+                Examples of such documentation include a birth certificate, driver license
+                and/or proof of student status.</p>
+
+            <p>Eligibility must be confirmed prior to dependent(s) utilizing benefits under the plan.
+                To submit this documentation, please email
+                <a href="mailto:info@uslegalservices.net">info@uslegalservices.net</a> or fax to (904) 730-0023.</p>
+
+            <p>Please click “I Agree” to confirm you acknowledge this.</p>
+            <label><input type="checkbox" name="agree" ng-model="member.new_dependent.agree">I Agree</label>
+        </section>
+        <section>
+            <h3>Dependent Information</h3>
+            <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+            <div class="row">
+                <select ng-model="new_dependent.type" class="full-width" name="dependent_type" required>
+                    <option value="" disabled selected>Select Dependent Type</option>
+                    <option>Spouse/Domestic Partner</option>
+                    <option value="Children">Child</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <input type="text" name="first_name"ng-model="new_dependent.first_name" placeholder="First Name" class="full-width" required>
+                <p class="small-hint error" ng-show="adddep.first_name.$invalid">required</p>
+                <p class="small-hint success" ng-show="adddep.first_name.$valid">required</p>
+            </div>
+
+            <div class="row">
+                <input type="text" name="last_name"ng-model="new_dependent.last_name" placeholder="Last Name (if different from Member's last name)" class="full-width">
+            </div>
+
+        </section>
+
+        <input type="submit" class="submit" value="Add Dependent"
+               ng-disabled="!(member.new_dependent.agree
+                                && addDep.dependent_type.$valid
+                                && addDep.first_name.$valid
+                                && !inProgress)"/>
+        <a href="#!account_info" class="button">Cancel</a>
+
+    </form>
+
+</div>

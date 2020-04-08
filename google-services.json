@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "18495834307",
+    "firebase_url": "https://us-legal-services.firebaseio.com",
+    "project_id": "us-legal-services",
+    "storage_bucket": "us-legal-services.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18495834307:android:d6058577bed5ba20",
+        "android_client_info": {
+          "package_name": "net.uslegalservices.memberapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18495834307-es0kpr3ogotdj9nhmiv2aktov12im7h0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeT7QA7VTnfw1YfNuXDwBIE2zOdGcmJYs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

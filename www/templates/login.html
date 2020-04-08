@@ -1,0 +1,31 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Login</h1>
+    </div>
+
+    <p class="center">Have an account? Please login</p>
+    <form name="USLlogin" ng-submit="login()">
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <p class="info" ng-show="msg.length > 0">{{msg}}</p>
+        <div class="row">
+            <input type="text" name="username" ng-model="member.username" placeholder="Username (ex. john.doe@example.com)"
+                   class="full-width" title="This will be the email you registered with" required>
+        </div>
+        <div class="row">
+            <input type="password" name="password" ng-model="member.password" placeholder="Password" class="full-width" required>
+        </div>
+        <div class="row">
+            <label><input type="checkbox" ng-model="remember_username">Remember my username</label>
+        </div>
+        <div class="row">
+            <input type="submit" class="submit" value="Login" ng-disabled="!(USLlogin.username.$valid && USLlogin.password.$valid && !inProgress)"/>
+        </div>
+        <div class="row">
+            <a class="button" href="#!pass_reset_step1">Forgot Password?</a>
+        </div>
+    </form>
+    <p class="center">No U.S. Legal Services account?</p>
+    <a class="button" href="#!register">Register</a>
+    <a class="button" href="javascript:;" ng-click="demoLogin()">Demo</a>
+</div>

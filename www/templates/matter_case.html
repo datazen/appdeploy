@@ -1,0 +1,50 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Matter # {{currentMatterCase.matter_number}}</h1>
+    </div>
+
+    <section>
+        <h3>Case Information</h3>
+        <table class="full-table two-col">
+            <tr>
+                <th>Matter #</th>
+                <td>{{currentMatterCase.matter_number}}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{currentMatterCase.status}}</td>
+            </tr>
+            <tr>
+                <th>Created on</th>
+                <td>{{currentMatterCase.datecreated}}</td>
+            </tr>
+            <tr>
+                <th>Authorization Date</th>
+                <td>{{currentMatterCase.authorization_date}}</td>
+            </tr>
+            <tr>
+                <th>Coverage</th>
+                <td>{{currentMatterCase.coverage}}</td>
+            </tr>
+            <tr>
+                <th>Plan Class</th>
+                <td>{{currentMatterCase.plan_class}}</td>
+            </tr>
+            <tr>
+                <th>Assigned Date</th>
+                <td>{{currentMatterCase.assigned_date}}</td>
+            </tr>
+            <tr>
+                <th>Attorney Name</th>
+                <td>{{currentMatterCase.attorney_name}}</td>
+            </tr>
+            <tr>
+                <th>Attorney Phone</th>
+                <td>{{currentMatterCase.attorney_phone}}</td>
+            </tr>
+
+        </table>
+    </section>
+
+</div>

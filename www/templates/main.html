@@ -1,0 +1,26 @@
+<div id="userInfo">
+    <h1>{{member.first_name}} {{member.last_name}}</h1>
+    <h4 class="uih4">Member since {{member.effective_date}}</h4>
+</div>
+<section class="mainscreen">
+    <h2 class="align-center">Account</h2>
+    <a class="button" ng-show="hasPermission('get_member_info')" href="#!account_info">Account Information</a>
+    <a class="button" ng-show="hasPermission('get_member_info')" href="#!membership_card">View Member ID Card</a>
+    <a class="button" ng-show="hasPermission('attorney_search')" href="#!attorney_search">Attorney Search</a>
+    <a class="button" ng-show="hasPermission('get_member_info') && !isDemo()" href="javascript:;" ng-click="openUrl('https://www.uslegalservices.net/additionalresources')">
+        Additional Member Resources
+    </a>
+
+    <h2 class="align-center"  ng-show="hasPermission('view_cdl_cases')">CDL & Roadside Inspection Cases</h2>
+    <a class="button" ng-show="hasPermission('view_cdl_cases')" href="#!cases">View CDL & Roadside Inspection Cases</a>
+    <a class="button" ng-show="hasPermission('submit_citation')" href="#!submit_citation">Submit Citation or Roadside Inspection</a>
+
+    <h2 class="align-center">Matter Cases & Consultations</h2>
+    <a class="button" ng-show="hasPermission('view_matter_cases')" href="#!matter_cases">View Matter Cases</a>
+    <a class="button" ng-show="hasPermission('create_matter_case')" href="#!new_matter_case">Request a Consultation</a>
+
+    <h2 class="align-center">Contact U.S. Legal Services</h2>
+    <a class="button phone-number" href="tel:{{member.support_phone}}">Call U.S. Legal</a>
+    <a class="button" href="javascript:;" ng-click="openWebsite()">Visit U.S. Legal's Website</a>
+
+</section>

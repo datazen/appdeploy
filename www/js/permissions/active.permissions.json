@@ -1,0 +1,10 @@
+{
+    "get_member_info": true,
+    "post_member_info": true,
+    "submit_citation": false,
+    "view_cdl_cases": false,
+    "view_matter_cases": true,
+    "create_matter_case": true,
+    "attorney_search": true,
+    "add_dependents": false
+}

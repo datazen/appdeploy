@@ -1,0 +1,73 @@
+<div>
+    <div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Update Account</h1>
+    </div>
+
+    <section>
+        <form name="contactInfo" ng-submit="updateContactInfo()">
+            <h3>Contact Information</h3>
+            <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+            <table class="full-table two-col-one-third-table">
+                <tr>
+                    <th>Phone</th>
+                    <td>
+                        <input id="memberphone" ng-change="formatMemberPhone()" type="text" name="phone" ng-model="member.phone" class="full-width update" required/>
+                        <p class="small-hint error" ng-show="contactInfo.phone.$invalid">required</p>
+                        <p class="small-hint success" ng-show="contactInfo.phone.$valid">required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>
+                        <input type="text" name="address1" ng-model="member.address1" class="full-width update" required/>
+                        <p class="small-hint error" ng-show="contactInfo.address1.$invalid">required</p>
+                        <p class="small-hint success" ng-show="contactInfo.address1.$valid">required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>
+                        <input type="text" name="city" ng-model="member.city" class="full-width update" required/>
+                        <p class="small-hint error" ng-show="contactInfo.city.$invalid">required</p>
+                        <p class="small-hint success" ng-show="contactInfo.city.$valid">required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td>
+                        <select name="state" ng-model="member.state" class="full-width update" required>
+                            <option disabled value="">Select a state</option>
+                            <option ng-repeat="state in stateList" value="{{state.shortName}}">{{state.name}}</option>
+                        </select>
+                        <p class="small-hint error" ng-show="contactInfo.state.$invalid">required</p>
+                        <p class="small-hint success" ng-show="contactInfo.state.$valid">required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Zip</th>
+                    <td>
+                        <input type="tel" pattern="[0-9]*" name="zip" maxlength="5" ng-model="member.zip" class="full-width update" required/>
+                        <p class="small-hint error" ng-show="contactInfo.zip.$invalid">required</p>
+                        <p class="small-hint success" ng-show="contactInfo.zip.$valid">required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>County</th>
+                    <td>
+                        <input type="text" name="county" ng-model="member.county" class="full-width update"/>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" class="submit" value="Update Account"
+                   ng-disabled="!(contactInfo.phone.$valid
+                                && contactInfo.address1.$valid
+                                && contactInfo.city.$valid
+                                && contactInfo.zip.$valid
+                                && contactInfo.state.$valid
+                                && !inProgress)"/>
+        </form>
+    </section>
+
+
+</div>

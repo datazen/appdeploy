@@ -1,0 +1,18 @@
+<div>
+<div id="pageTitle" ng-controller="menuCtrl">
+        <a href="javascript:void(0);" ng-click="go_back()"><img class="back" src="img/back.png"/></a>
+        <h1 class="title">Password Reset</h1>
+    </div>
+
+    <p class="center">Please answer the security question to proceed with password reset.</p>
+    <form name="PassReset" ng-submit="passwordResetStep2()">
+        <p class="error" ng-show="errorMsg.length > 0">{{errorMsg}}</p>
+        <div class="row">
+            <p><strong>{{getSecurityQuestion()}}</strong></p>
+            <input type="text" name="answer" ng-model="member.security_answer" placeholder="Answer" class="full-width" required>
+        </div>
+        <div class="row">
+            <input type="submit" class="submit" value="Next"/>
+        </div>
+    </form>
+</div>

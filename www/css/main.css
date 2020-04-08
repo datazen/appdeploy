@@ -1,0 +1,819 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.big-screen {
+	display: none;
+}
+select {
+	border-radius: 0;
+	font-size: 1.1em;
+}
+
+input[type=submit],
+input[type=date],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=datetime-local],
+input[type=button] {
+	-webkit-appearance: none;
+    border-radius: 0;
+	font-size: 1.1em;
+}
+
+h1 {
+	color: #717173;
+	margin-bottom: -10px;
+	font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    color: #717173;
+	padding: 0;
+}
+
+h4, h5, h6 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+h1.title {
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom: 0px;
+	color: #0055a8;
+}
+
+.align-center {
+	text-align: center;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+p.center {
+    text-align: center;
+}
+
+.view-frame > div > div,
+.view-frame > div > section {
+    margin: 0 0.5%;
+}
+
+input[type="datetime-local"]:before,
+input[type="date"]:before {
+	content: attr(placeholder) !important;
+	margin-right: 0.5em;
+}
+input[type="datetime-local"]:focus:before,
+input[type="date"]:focus:before,
+input[type="datetime-local"]:valid:before,
+input[type="date"]:valid:before {
+	content: "";
+}
+
+.mainscreen fieldset {
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	padding: 10px 0;
+}
+
+.mainscreen h2 {
+	color: #0055a8;
+}
+
+form {
+    margin: 0;
+}
+
+.full-width {
+    width: 99%;
+}
+
+.half-width {
+    width: 49%;
+}
+
+.quarter-width {
+    width: 24%;
+}
+
+.three-quarter-width {
+	width: 74%;
+}
+
+.third-width {
+    width: 32%;
+}
+
+.row {
+	display: block;
+    width: 100%;
+}
+
+.row .col {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#userInfo {
+	margin-bottom: 20px;
+}
+
+#userInfo h1 {
+	color: #0055a8;
+}
+
+.uih4 {
+	margin-top: 20px;
+}
+
+#container {
+	width: 100%;
+}
+
+
+
+.error {
+    color: #ac2925;
+    font-weight: bold;
+    padding: 9px 40px;
+    background-image: url(../img/attention.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+
+.info {
+    color: #717173;
+    font-weight: bold;
+    padding: 9px 40px;
+    background-image: url(../img/info.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+header {
+	border-bottom: solid 5px #ECECFB;
+	padding: 10px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	background-color: #FFF;
+}
+
+header .header-container {
+    width: 100%;
+}
+
+header #logo{
+	width: 75px;
+}
+
+header .header-link {
+    color: #0055a8;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#menu {
+	float: right;
+	margin-top: 20px;
+}
+
+header .header-right {
+    float: right;
+    margin-top: 20px;
+}
+
+#menuTrigger {
+	width: 44px;
+	height: 44px;
+	background-image: url(../img/menu.png);
+	background-position: top left;
+	transition: 100ms all linear;
+    display: inline-block;
+    margin: -10px 10px;
+    vertical-align: top;
+}
+
+#menuTrigger:hover {
+	cursor: pointer;
+	filter: brightness(150%)
+}
+
+#menuTrigger.clicked {
+	background-position: bottom left;
+}
+
+.button {
+    border: none;
+    width: 99%;
+    box-sizing: border-box;
+	background-color: #B6995B;
+	border-bottom: solid 4px #DACBAD;
+	display: block;
+	padding: 22px 0px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 900;
+}
+
+.button-small {
+    border: none;
+    width: 99%;
+    box-sizing: border-box;
+	background-color: #B6995B;
+	border-bottom: solid 4px #DACBAD;
+	display: block;
+	padding: 12px 0;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	margin: 0 0.5%;
+	font-size: 13px;
+	font-weight: 900;
+}
+
+img.button {
+	width: 48%;
+	display: inline-block;
+}
+
+.button:disabled {
+	background-color: #bfac83;
+}
+
+.gallery-button,
+.camera-button {
+	width: 48%;
+	display: inline-block;
+	margin: 0.5%;
+	box-sizing: border-box;
+}
+
+.camera-button {
+	background-image: url(../img/camera.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 100px;
+	max-height: 200px;
+}
+
+.gallery-button {
+	background-image: url(../img/gallery.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	min-height: 100px;
+	max-height: 200px;
+}
+
+#pageTitle {
+	margin-top: 40px;
+	margin-bottom: 40px;
+    margin-left: 0.5%
+}
+
+.back {
+	float: left;
+	margin-right: 15px;
+	width: 22px;
+}
+
+.view-container {
+	margin-top: 110px;
+}
+
+form select,
+form input,
+a.button,
+p{
+    margin: 0.5%;
+}
+
+form select,
+form input[type="text"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="datetime-local"],
+form input[type="number"],
+form input[type="email"],
+form input[type="phone"],
+form input[type="password"] {
+	padding: 15px 5px 10px 5px;
+	color: #00386A;
+    box-sizing: border-box;
+	background-color: #f7f7f7;
+}
+input.ng-invalid {
+	border: 1px solid #ac2925;
+}
+
+input.update {
+	background-image: url(../img/edit.png);
+	background-position: center right;
+	background-repeat: no-repeat;
+}
+
+input.no-valid-check,
+input.ng-valid {
+	border: 1px solid rgb(169, 169, 169);
+}
+
+form fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+form fieldset .remove,
+form fieldset .add {
+    width: 35px;
+    height: 100%;
+    min-height: 35px;
+    background-color: #3c763d;
+    font-size: x-large;
+    color: #FFF;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    line-height: 100%;
+}
+form fieldset .remove {
+    background-color: #ac2925;
+}
+
+form fieldset .remove:disabled  {
+    background-color: #dca7a7;
+}
+
+.upload {
+	margin-left: 10px;
+}
+
+.submit {
+	width: 99%;
+	background-color: #1563AC;
+	border: none;
+	border-bottom: solid 4px #6DB0ED;
+	display: block;
+	padding: 12px 0px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 900;
+	margin-top: 50px;
+	min-height: 44px;
+}
+
+.submit:disabled {
+    background-color: #38566f;
+}
+::-webkit-input-placeholder {
+  color: #00386A;
+}
+
+
+#call-icon {
+	position: relative;
+	top: 6px;
+	margin: 0 10px;
+}
+
+.small-hint {
+	padding: 0 4px;
+    font-size: 12px;
+    color: #717173;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
+.small-hint.error {
+    background: none;
+    color: #ac2925;
+}
+
+.normal-hint.error {
+	padding: 0 4px;
+	background: none;
+	color: #ac2925;
+	font-weight: bold;
+}
+
+.small-hint.success {
+    background: none;
+    color: #3e8f3e;
+}
+
+.input-hint {
+	position: relative;
+	top: -40px;
+	padding: 0 4px;
+	background: none;
+	font-size: 13px;
+}
+
+ul.attorney-list > li {
+	margin-bottom: 20px;
+}
+
+.multi-table-section ul {
+    margin-left: 0;
+    padding: 0;
+}
+
+.multi-table-section ul li {
+    list-style: none;
+}
+
+/*****************************
+
+      Membership Card
+
+******************************/
+
+.membership_card {
+	width: 100%;
+	max-width: 400px;
+	min-width: 250px;
+}
+
+.membership_card tr th img
+{
+	width: 80px;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+.membership_card tr th span {
+	font-size: 1.2em;
+	color: #1563AC;
+	text-transform: uppercase;
+}
+
+.membership_card tr th {
+	color: #717173;
+	text-align: left;
+}
+
+table.membership_card  tr  th,
+table.membership_card  tr  td {
+	width: 50%;
+}
+
+/****************************
+
+		Attorneys List
+
+*****************************/
+
+ul.coverage-list li{
+	list-style: circle;
+}
+
+ul.coverage-list {
+    padding-left:20px;
+}
+
+.attorney-search-options {
+    transition: all linear 0.25s;
+    height: 160px;
+    overflow: hidden;
+}
+
+.attorney-search-options.ng-hide {
+    height: 0;
+}
+
+/*****************************
+
+         Cases List
+
+******************************/
+
+ul.cases_list {
+    margin: 0;
+    padding: 0;
+}
+
+ul.cases_list li {
+	list-style: none;
+	border: none;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #B6995B;
+	border-bottom: solid 4px #DACBAD;
+	display: block;
+	padding: 22px 20px;
+	text-align: left;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	margin: 0 0 20px 0;
+    cursor: pointer;
+}
+
+ul.cases_list li img {
+    float: right;
+}
+
+.matter-case-tile div {
+    vertical-align: middle;
+	display: inline-block;
+}
+
+fieldset.citation_number input {
+    width: 44px;
+	height: 44px;
+    box-sizing: border-box;
+}
+fieldset #first_citation,
+fieldset.citation_number input:first-child {
+    width: calc(97% - 100px);
+}
+
+fieldset #first_citation {
+    display: inline-block;
+    margin-right: 1%;
+}
+
+fieldset #first_citation input {
+    width: 100%;
+}
+
+
+/*****************************
+
+       Add Dependent
+
+******************************/
+
+.disclaimer p {
+	margin-top: 7px;
+}
+
+/*****************************
+
+       Picture Upload
+
+******************************/
+
+#imgs img {
+	width: 48%;
+	margin-right: 1%;
+	box-sizing: border-box;
+}
+
+
+
+
+/*****************************
+
+           Tables
+
+******************************/
+
+table.two-col  tr  th,
+table.two-col  tr  td {
+    width: 50%;
+}
+
+table.two-col tr  th {
+    text-align: right;
+}
+
+table.two-col tr  th {
+    text-align: center;
+}
+
+table.three-col tr th,
+table.three-col tr td {
+    width: 33.3%;
+}
+
+
+table.full-table {
+    width: 99%;
+    margin: 2px 0.5%;
+}
+
+table.full-table tbody {
+	width: 100%;
+}
+
+table.full-table tr th,
+table.full-table tr td {
+    background-color: #f7f7f7;
+    border: 1px solid #A7A7A7;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+table.full-table tr th {
+    font-weight: bold;
+    color: #717173;
+}
+
+table.two-col-one-third-table tr th:first-child,
+table.two-col-one-third-table tr th:first-child {
+	width: 33%;
+}
+
+/******************************
+
+              NAV
+
+*******************************/
+
+nav {
+	background: #00386A;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 0 8px;
+	font-size: 16px;
+	position: fixed;
+	min-width: 300px;
+	top: 80px;
+	left: -600px;
+	transition: 300ms all ease-in-out;
+	height: calc(100% - 80px);
+	overflow-y: scroll;
+	z-index: 100;
+}
+
+nav.clicked {
+	left: 0;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style: none;
+	margin: 4px 0 0 0;
+	min-height: 44px;
+}
+
+nav ul li.callbtn {
+	margin: 8px 0 0 0;
+}
+
+nav ul li a {
+	color: inherit;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #004386;
+	display: block;
+	padding: 0 4px;
+	line-height: 2.5;
+	text-align: center;
+	transition: 100ms all linear;
+}
+
+nav ul li a:hover {
+	background: #82C0FF;
+}
+
+nav ul li a.gold-menu-item {
+	background: #BA9E64;
+}
+
+nav ul li a.gold-menu-item:hover {
+	background: #9d8554;
+}
+
+nav p {
+	font-size: 22px;
+	margin: 0;
+	line-height: 1.7;
+}
+
+nav .spacer {
+	border-top: 4px solid #82C0FF;
+	margin: 12px 0;
+}
+
+
+/****
+ For bigger screens devices
+ ****/
+
+@media only screen and (min-width: 360px) {
+    h1 {
+        margin-bottom: -15px;
+        font-size: 24px;
+    }
+
+	h1.title {
+        font-size: 24px;
+	}
+
+	.back {
+		width: 30px;
+	}
+
+	.button {
+        font-size: 20px;
+	}
+
+	.button-small {
+        font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	table.big-screen {
+		display: table;
+	}
+
+	.small-screen {
+		display: none;
+	}
+
+    header #logo {
+        width: 100px;
+    }
+
+
+    header .header-link {
+        font-size: 22px;
+        margin: 0 15px;
+    }
+
+    header #menuTrigger {
+        margin: 0 15px;
+    }
+
+    .view-container {
+        margin-top: 135px;
+    }
+
+    nav {
+        top: 100px;
+        height: calc(100% - 100px);
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    header #logo {
+        width: 125px;
+    }
+
+    header .header-right {
+        margin-top: 40px;
+    }
+
+    header .header-link {
+        font-size: 26px;
+        margin: 0 25px;
+    }
+
+    header #menuTrigger {
+        margin: 0 25px;
+		margin-top: -7px;
+    }
+
+    .view-container {
+        margin-top: 145px;
+    }
+
+    nav {
+        top: 128px;
+        height: calc(100% - 128px);
+        overflow-y: hidden;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    header .header-container,
+    #container {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+}
