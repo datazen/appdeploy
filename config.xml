@@ -13,6 +13,7 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="WKWebViewOnly" value="true" />
     <platform name="android">
         <icon density="ldpi" src="resources/android/icon/ldpi.png" />
         <icon density="mdpi" src="resources/android/icon/mdpi.png" />
