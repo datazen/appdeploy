@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.2",
   "displayName": "U.S. Legal Services",
   "cordova": {
     "platforms": [
@@ -22,15 +22,15 @@
       "phonegap-plugin-push": {
         "FCM_VERSION": "11.6.2"
       },
-      "cordova-plugin-dialogs": {}
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-wkwebview-engine": {}
     }
   },
   "dependencies": {
     "cordova-android": "^7.1.4",
     "cordova-browser": "^5.0.1",
-    "cordova-ios": "^5.1.0",
+    "cordova-ios": "^4.4.0",
     "cordova-plugin-camera": "^2.4.1",
-    "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "~1.1.1",
     "cordova-plugin-device-orientation": "~1.0.2",
     "cordova-plugin-dialogs": "~2.0.1",
@@ -42,6 +42,7 @@
     "cordova-plugin-statusbar": "^2.3.0",
     "cordova-plugin-vibration": "~2.1.0",
     "cordova-plugin-whitelist": "~1.2.1",
+    "cordova-plugin-wkwebview-engine": "^1.2.1",
     "phonegap-plugin-push": "~2.1.3"
   }
 }
