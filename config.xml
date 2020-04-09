@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-packageName="net.uslegalservices.memberapp" android-versionCode="4" ios-CFBundleIdentifier="net.uslegalservices.memberapp" ios-CFBundleVersion="8" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-packageName="net.uslegalservices.memberapp" ios-CFBundleIdentifier="net.uslegalservices.memberapp" ios-CFBundleVersion="2" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>U.S. Legal Services</name>
     <description>
         U.S. Legal Member Application
@@ -8,20 +8,17 @@
         U.S. Legal Services
     </author>
     <content src="index.html" />
-    <!-- <preference name="phonegap-version" value="cli-9.0.0" />
-    <preference name="pgb-builder-version" value="2" /> -->
+    <preference name="phonegap-version" value="cli-9.0.0" />
+    <preference name="pgb-builder-version" value="2" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
+    <preference name="ScrollEnabled" value="true" />
+    <preference name="WKSuspendInBackground" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="android-targetSdkVersion" value="28" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="WKWebViewOnly" value="true" />
-    <feature name="CDVWKWebViewEngine">
-      <param name="ios-package" value="CDVWKWebViewEngine" />
-    </feature>
-    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="AllowBackForwardNavigationGestures" value="true" />
     <preference name="Allow3DTouchLinkPreview" value="false" />
     <platform name="android">
@@ -115,6 +112,7 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.2.0" />
     <plugin name="cordova-plugin-network-information" spec="^1.2.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^3.2.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <engine name="browser" spec="^5.0.1" />
     <engine name="ios" spec="^5.1.1" />
     <engine name="android" spec="^7.1.4" />
